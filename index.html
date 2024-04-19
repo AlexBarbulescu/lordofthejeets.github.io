@@ -59,7 +59,7 @@
 						<div class="slider-caption slider-caption-center">
 							<div>
 								<img class="logo-default" src="img/main.png" >
-								<span data-clipboard-text="Contract Address: To be Announced" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-html="true" data-bs-title="<b>PRESS to COPY</b>" class="button button-rounded button-reveal button-large button-white button-light textbox truncate-text"><i class="fa-brands"></i> Contract Address: To be Announced </span>
+								<span data-clipboard-text="Contract Address: To be Announced" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-html="true" data-bs-title="<b>PRESS to COPY</b>" class="button button-rounded button-reveal button-large button-white button-light textbox truncate-text" id="copyButton"><i class="fa-brands"></i> Contract Address: To be Announced </span>
 							</div>
 
 							<a href="https://twitter.com/LordOfTheJeets" class="button button-rounded button-large button-white text-dark h-text-light" target="_blank">Follow on X</a>
@@ -193,9 +193,20 @@
 			</div>
 		</div>
 
-	</footer><!-- #footer end -->
+	</footer>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/functions.bundle.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
+	<script>
+		// Initialize Tooltip
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+		  return new bootstrap.Tooltip(tooltipTriggerEl)
+		});
+	
+		// Initialize Clipboard
+		new ClipboardJS('#copyButton');
+	  </script>
 </body>
 </html>
